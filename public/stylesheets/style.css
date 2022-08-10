@@ -10,7 +10,7 @@ body, html {
   color: #333;
 }
 
-header h1 a  {
+header h1 a {
   font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 35px;
   text-decoration: none;
@@ -19,7 +19,7 @@ header h1 a  {
   transition: color .1s;
 }
 
-header h1 a:hover {
+head h1 a:hover {
   color: #3486eb;
 }
 
