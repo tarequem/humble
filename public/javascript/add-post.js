@@ -19,7 +19,10 @@ async function newFormHandler(event) {
       body: JSON.stringify({
         title
       }),
-      file: image
+      file: image,
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
   } catch (error) {
     console.log(`Could not send post req: ${error}`);
