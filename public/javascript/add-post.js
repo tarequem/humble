@@ -5,7 +5,7 @@
 
 //   console.log("HERE");
 
-//   const title = document.querySelector('input[name="post-title"]').value;
+//   const title = document.querySelector('input[name="title"]').value;
 //   const image = document.querySelector('input[name="image"]').value;
 //   console.log(title);
 //   console.log(image);

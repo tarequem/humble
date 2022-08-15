@@ -86,10 +86,9 @@ router.get('/:id', (req, res) => {
 // });
 
 router.post('/', postController.upload.single('image'), function (req, res) {
-  // req.file is the `profile-file` file
-  // req.body will hold the text fields, if there were any
-  console.log(JSON.stringify(req.file));
-  console.log(req.file.path);
+  postController.createPost(req).then(res => {
+    document.location.replace('/dashboard');
+  });  
 })
 
 router.put('/upvote', withAuth, (req, res) => {

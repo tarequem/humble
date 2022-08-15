@@ -5,15 +5,14 @@ const multer = require("multer");
 const createPost = async (req, res) => {
   try {
     let post = await Post.create({ 
-      title: req.title,
-      image: req.file,
+      title: req.body.title,
+      image: req.file.path,
       user_id: req.session.user_id
     });
     console.log(`==== post is ${post}`);
-    res.status(200).send(post);
-  } catch (error) {
+  } catch (err) {
     console.log(`err: ${err}`);
-    return res.send(`Error when trying upload images: ${error}`);
+    return res.send(`Error when trying upload images: ${err}`);
   }
 };
 
