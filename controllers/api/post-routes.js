@@ -81,10 +81,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// router.post('/', withAuth, (req, res) => { //postController.upload , postController.createPost);
-//   console.log(req.body.title);
-// });
-
 router.post('/', postController.upload.single('image'), async function (req, res) {
   await postController.createPost(req);
   res.redirect('/dashboard');

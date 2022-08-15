@@ -9,7 +9,6 @@ const createPost = async (req, res) => {
       image: req.file.path,
       user_id: req.session.user_id
     });
-    console.log(`==== post is ${post}`);
   } catch (err) {
     console.log(`err: ${err}`);
     return res.send(`Error when trying upload images: ${err}`);
