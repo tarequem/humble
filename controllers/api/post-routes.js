@@ -85,10 +85,9 @@ router.get('/:id', (req, res) => {
 //   console.log(req.body.title);
 // });
 
-router.post('/', postController.upload.single('image'), function (req, res) {
-  postController.createPost(req).then(res => {
-    document.location.replace('/dashboard');
-  });  
+router.post('/', postController.upload.single('image'), async function (req, res) {
+  await postController.createPost(req);
+  res.redirect('/dashboard');
 })
 
 router.put('/upvote', withAuth, (req, res) => {
