@@ -3,6 +3,7 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
 const withAuth = require('../../utils/auth');
 const postController = require('../postController');
+const multipart = require('parse-multipart-data');
 
 // get all users
 router.get('/', (req, res) => {
@@ -80,9 +81,16 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => { //postController.upload , postController.createPost);
-  console.log(req.body.title);
-});
+// router.post('/', withAuth, (req, res) => { //postController.upload , postController.createPost);
+//   console.log(req.body.title);
+// });
+
+router.post('/', postController.upload.single('image'), function (req, res) {
+  // req.file is the `profile-file` file
+  // req.body will hold the text fields, if there were any
+  console.log(JSON.stringify(req.file));
+  console.log(req.file.path);
+})
 
 router.put('/upvote', withAuth, (req, res) => {
   // custom static method created in models/Post.js
