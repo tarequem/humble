@@ -3,7 +3,6 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
 const withAuth = require('../../utils/auth');
 const postController = require('../postController');
-const multipart = require('parse-multipart-data');
 
 // get all users
 router.get('/', (req, res) => {
