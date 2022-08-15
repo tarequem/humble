@@ -13,8 +13,8 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-            'user_post',
             'title',
+            'image',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
@@ -36,9 +36,9 @@ router.get('/', withAuth, (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('dashboard', { posts, loggedIn: true });
-    })
+    }) 
     .catch(err => {
-        console.log(err);
+        console.log(`err: ${err}`);
         res.status(500).json(err);
     });
 });
@@ -47,7 +47,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
-            'user_post',
+            'image',
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']

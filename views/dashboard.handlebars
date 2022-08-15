@@ -1,14 +1,14 @@
 <section>
   <h2>Create New Post</h2>
 
-  <form class="new-post-form">
+  <form id="post-form" class="new-post-form" enctype="multipart/form-data" method="POST" action="/api/posts">
     <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" />
     </div>
     <div>
-      <label for="url-post">Link</label>
-      <input id="user-post" name="post-url" />
+      <label for="image">Upload a photo</label>
+      <input type="file" id="image" name="image" accept=".jpg,.jpeg,.png">
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
@@ -22,10 +22,14 @@
     <li>
       {{> post-info post}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      <img src="{{post.image}}">
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+<!--<script src="/javascript/add-post.js"></script>
+=======
+{{/if}}
+>>>>>>> feature/muter
