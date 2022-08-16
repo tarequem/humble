@@ -22,11 +22,9 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-<<<<<<< HEAD
-        attributes: ['id', 'title', 'user_post', 'created_at']
-=======
+        attributes: ['id', 'title', 'user_post', 'created_at'],
+
         attributes: ['id', 'title', 'image', 'created_at']
->>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
       },
       {
         model: Comment,

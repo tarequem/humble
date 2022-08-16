@@ -13,10 +13,7 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-<<<<<<< HEAD
             'user_post',
-=======
->>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
             'title',
             'image',
             'created_at',
@@ -51,11 +48,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
-<<<<<<< HEAD
             'user_post',
-=======
             'image',
->>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']

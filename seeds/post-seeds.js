@@ -3,7 +3,6 @@ const { Post } = require('../models');
 const postdata = [
   {
     title: 'Donec posuere metus vitae ipsum.',
-<<<<<<< HEAD
     user_post: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
     user_id: 10
   },
@@ -101,11 +100,9 @@ const postdata = [
   {
     title: 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     user_post: 'https://java.com/at/nibh/in.png',
-    user_id: 7
-=======
+    user_id: 7,
     image: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
     user_id: 1
->>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
   }
 ];
 
