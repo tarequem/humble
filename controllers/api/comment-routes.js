@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   Comment.findAll()
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
-      console.log(err);
+      console.log(`err: ${err}`);
       res.status(500).json(err);
     });
 });
@@ -20,7 +20,7 @@ router.post('/', withAuth, (req, res) => {
   })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
-      console.log(err);
+      console.log(`err: ${err}`);
       res.status(400).json(err);
     });
 });
@@ -39,7 +39,7 @@ router.delete('/:id', withAuth, (req, res) => {
       res.json(dbCommentData);
     })
     .catch(err => {
-      console.log(err);
+      console.log(`err: ${err}`);
       res.status(500).json(err);
     });
 });

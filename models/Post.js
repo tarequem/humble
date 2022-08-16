@@ -13,7 +13,11 @@ class Post extends Model {
         },
         attributes: [
           'id',
+<<<<<<< HEAD
           'user_post',
+=======
+          'image',
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
           'title',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -46,12 +50,12 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+<<<<<<< HEAD
     user_post: {
+=======
+    image: {
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true
-      }
     },
     user_id: {
       type: DataTypes.INTEGER,

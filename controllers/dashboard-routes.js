@@ -13,8 +13,12 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
+<<<<<<< HEAD
             'user_post',
+=======
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
             'title',
+            'image',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
@@ -36,9 +40,9 @@ router.get('/', withAuth, (req, res) => {
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('dashboard', { posts, loggedIn: true });
-    })
+    }) 
     .catch(err => {
-        console.log(err);
+        console.log(`err: ${err}`);
         res.status(500).json(err);
     });
 });
@@ -47,7 +51,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
+<<<<<<< HEAD
             'user_post',
+=======
+            'image',
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']

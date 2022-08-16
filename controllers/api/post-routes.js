@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
 const withAuth = require('../../utils/auth');
+const postController = require('../postController');
 
 // get all users
 router.get('/', (req, res) => {
@@ -9,7 +10,11 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
+<<<<<<< HEAD
       'user_post',
+=======
+      'image',
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -30,8 +35,11 @@ router.get('/', (req, res) => {
     ]
   })
     .then(dbPostData => res.json(dbPostData))
+    .then (data => {
+      console.log(`data is: ${JSON.stringify(data)}`);
+    })
     .catch(err => {
-      console.log(err);
+      console.log(`err: ${err}`);
       res.status(500).json(err);
     });
 });
@@ -43,7 +51,11 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
+<<<<<<< HEAD
       'user_post',
+=======
+      'image',
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
       'title',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -71,11 +83,12 @@ router.get('/:id', (req, res) => {
       res.json(dbPostData);
     })
     .catch(err => {
-      console.log(err);
+      console.log(`err: ${err}`);
       res.status(500).json(err);
     });
 });
 
+<<<<<<< HEAD
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', user_post: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
@@ -89,6 +102,12 @@ router.post('/', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+=======
+router.post('/', postController.upload.single('image'), async function (req, res) {
+  await postController.createPost(req);
+  res.redirect('/dashboard');
+})
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
 
 router.put('/upvote', withAuth, (req, res) => {
   // custom static method created in models/Post.js

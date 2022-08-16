@@ -8,7 +8,11 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
+<<<<<<< HEAD
             'user_post',
+=======
+            'image',
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT (*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -37,7 +41,7 @@ router.get('/', (req, res) => {
         });
     })
     .catch(err => {
-        console.log(err);
+        console.log(`err: ${err}`);
         res.status(500).json(err);
     });
 });
@@ -50,7 +54,11 @@ router.get('/post/:id', (req, res) => {
         },
             attributes: [
             'id',
+<<<<<<< HEAD
             'user_post',
+=======
+            'image',
+>>>>>>> 72fc35d98361ef8ed23c94339bebcbd9c482229c
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -84,7 +92,7 @@ router.get('/post/:id', (req, res) => {
         });
     })
     .catch(err => {
-        console.log(err);
+        console.log(`err: ${err}`);
         res.status(500).json(err);
     });
 });
