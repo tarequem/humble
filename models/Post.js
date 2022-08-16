@@ -13,7 +13,6 @@ class Post extends Model {
         },
         attributes: [
           'id',
-          'user_post',
           'image',
           'title',
           'created_at',

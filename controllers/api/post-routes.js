@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'user_post',
       'image',
       'title',
       'created_at',
@@ -48,7 +47,6 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'user_post',
       'image',
       'title',
       'created_at',
@@ -82,19 +80,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', user_post: 'https://taskmaster.com/press', user_id: 1}
-  Post.create({
-    title: req.body.title,
-    user_post: req.body.user_post,
-    user_id: req.session.user_id
-  })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
 router.post('/', postController.upload.single('image'), async function (req, res) {
   await postController.createPost(req);
   res.redirect('/dashboard');

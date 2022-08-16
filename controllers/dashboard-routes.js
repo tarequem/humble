@@ -13,7 +13,6 @@ router.get('/', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-            'user_post',
             'title',
             'image',
             'created_at',
@@ -48,7 +47,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
-            'user_post',
             'image',
             'title',
             'created_at',
