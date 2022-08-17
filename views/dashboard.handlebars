@@ -21,10 +21,10 @@
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
       <img src="{{post.image}}">
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
+
