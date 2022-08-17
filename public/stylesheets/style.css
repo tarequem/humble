@@ -6,7 +6,8 @@ header {
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   padding: 0;
   margin: 0;
@@ -54,13 +55,15 @@ button:hover {
   padding: 0;
 }
 
-textarea, input {
+textarea,
+input {
   padding: .5%;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   outline: none;
   border: 1px solid #3486eb;
 }
@@ -70,7 +73,7 @@ textarea {
   min-height: 100px;
 }
 
-form > div {
+form>div {
   margin-bottom: 2%;
 }
 
@@ -144,8 +147,12 @@ main {
 }
 
 .edit-link {
-  display: block;
-  margin: -1.5% 0 2% 0;
+  color: white;
+  width: 100%;
+  height: 30px;
+  background-color: red;
+  padding: 2px;
+  text-align: center;
 }
 
 .upvote-btn {
@@ -200,7 +207,17 @@ footer {
 .card {
   width: 600px;
   margin: 25px;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+
+.logsign {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  width: 300px;
+  height: 500px;
+  background: rgba(0, 0, 0, .2);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 @media (max-width: 1000px) {

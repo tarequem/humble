@@ -21,16 +21,12 @@
     {{#each posts as |post|}}
     <div class="card" style="width: 30rem; margin: 20px">
       <img class="card-img-top card-upload" src="{{post.image}}" alt="Card image cap">
-      <li>
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Delete Post</a>
-      </li>
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.vote_count}} point(s) by {{post.user.username}} on
           {{post.created_at}}</p>
         <a href="/post/{{post.id}}" class="btn btn-primary">{{post.comments.length}} comment(s)</a>
-
-        <button type="button" class="delete-post-btn">Delete post</button>
       </div>
     </div>
     {{/each}}
