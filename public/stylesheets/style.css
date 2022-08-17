@@ -81,12 +81,14 @@ form label {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
   border-bottom: 1px solid #ccc;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 1%;
 }
@@ -184,9 +186,4 @@ footer {
   justify-content: center;
   padding: 1%;
   font-size: 110%;
-}
-
-img {
-  max-width: 50rem;
-  max-height: 50rem;
 }

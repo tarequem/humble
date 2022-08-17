@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Humble</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,17 +16,17 @@
     <a href="/">Humble</a>
   </h1>
   <nav>
-    <a href="/dashboard">dashboard</a>
+    {{#if loggedIn}}
+    <a href="/dashboard">account</a>
     <button id="logout" class="btn-no-style">logout</button>
+    {{else}}
     <a href="/login">login</a>
+    {{/if}}
   </nav>
 </header>
 
 <body>
   <div class="wrapper">
-    <header>
-      <h1>Feed</h1>
-    </header>
     <main>
       {{{ body }}}
     </main>

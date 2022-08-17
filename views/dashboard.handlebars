@@ -19,10 +19,15 @@
   <h2>Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <img src="{{post.image}}">
-    </li>
+    <div class="card" style="width: 30rem; padding:5px">
+      <img class="card-img-top" src="{{post.image}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.vote_count}} point(s) by {{post.user.username}} on
+        {{post.created_at}}</p>
+        <a href="/post/{{post.id}}" class="btn btn-primary">{{post.comments.length}} comment(s)</a>
+      </div>
+    </div>
     {{/each}}
   </ol>
 </section>
