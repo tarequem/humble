@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS humble_db;
+DROP DATABASE IF EXISTS newsfeed_db;
 
-CREATE DATABASE humble_db;
+CREATE DATABASE newsfeed_db;
