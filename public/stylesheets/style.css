@@ -220,6 +220,12 @@ footer {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.comment-form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1000px) {
   .card {
     width: 80vw;
