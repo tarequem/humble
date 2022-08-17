@@ -1,19 +1,6 @@
-<ul class="post-list">
+
   {{#each posts as |post|}}
-  <li>
-    {{!-- <article class="post">
-      <div class="title">
-        <a href="{{post.image}}" target="_blank">{{post.title}}</a>
-        <img src="{{post.image}}">
-      </div>
-      <div class="meta">
-        {{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}}
-        |
-        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-      </div>
-    </article> --}}
-    <div class="card" style="width: 30rem; margin: 20px">
+    <div class="card">
       <img class="card-img-top card-upload" src="{{post.image}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
@@ -22,6 +9,4 @@
         <a href="/post/{{post.id}}" class="btn btn-primary">{{post.comments.length}} comment(s)</a>
       </div>
     </div>
-  </li>
   {{/each}}
-</ul>
