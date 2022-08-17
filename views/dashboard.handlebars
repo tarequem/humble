@@ -27,8 +27,10 @@
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}}</p>
+          {{post.created_at}}</p>
         <a href="/post/{{post.id}}" class="btn btn-primary">{{post.comments.length}} comment(s)</a>
+
+        <button type="button" class="delete-post-btn">Delete post</button>
       </div>
     </div>
     {{/each}}
@@ -36,3 +38,4 @@
 </section>
 {{/if}}
 
+<script src="/javascript/delete-post.js"></script>
