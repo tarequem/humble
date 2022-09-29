@@ -20,7 +20,7 @@
 https://glacial-wildwood-20620.herokuapp.com/
 
 ## Description:
-Feeling overconfident? Looking for construcive criticism or a good roasting? Humble yourself on Humble! 
+Feeling overconfident? Looking for constructive criticism or a good roasting? Humble yourself on Humble! 
 
 ## Usage:
 Use the Heroku link to launch the application.  
